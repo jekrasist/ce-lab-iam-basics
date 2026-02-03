@@ -1,14 +1,15 @@
 # IAM Basics Lab - Solution
 
-**Student Name:** [Your Name]  
-**Date Completed:** [Date]
+**Student Name:** [Ahmet Erdogan]  
+**Date Completed:** [03.02.2026]
 
 ---
 
 ## Exercise 1: IAM Groups
 
 ### Screenshots:
-![Groups Created](screenshots/groups-created.png)
+![Groups Created](<img width="1469" height="512" alt="image" src="https://github.com/user-attachments/assets/1380f46b-ba7a-4341-a24e-6a310b788427" />
+)
 
 ### Groups Created:
 - [x] Developers group
@@ -19,14 +20,16 @@
 ## Exercise 2: Group Permissions
 
 ### Developers Group:
-![Developers Permissions](screenshots/developers-permissions.png)
+![Developers Permissions](<img width="1689" height="632" alt="image" src="https://github.com/user-attachments/assets/e324c1cc-7aaf-4ef1-b32a-d1bceb7a02ed" />
+)
 
 **Policies Attached:**
 - AmazonS3FullAccess
 - AmazonEC2ReadOnlyAccess
 
 ### DevOps Group:
-![DevOps Permissions](screenshots/devops-permissions.png)
+![DevOps Permissions](<img width="1554" height="621" alt="image" src="https://github.com/user-attachments/assets/3d378852-936e-410a-9484-cdd0163f9489" />
+)
 
 **Policies Attached:**
 - AmazonS3FullAccess
@@ -37,7 +40,8 @@
 ## Exercise 3: IAM Users
 
 ### Screenshots:
-![Users Created](screenshots/users-created.png)
+![Users Created](<img width="1485" height="518" alt="image" src="https://github.com/user-attachments/assets/4c5061cf-699c-49b5-a974-cc449740f3d4" />
+)
 
 ### Users Created:
 
@@ -54,30 +58,35 @@
 ### Alice's Access Tests:
 
 **S3 Access:**
-![Alice S3 Access](screenshots/alice-s3-access.png)
+![Alice S3 Access](<img width="1436" height="663" alt="image" src="https://github.com/user-attachments/assets/70ef7b7a-eef1-4d59-bd09-2c529ec0b895" />
+)
 - Create bucket: ✅ SUCCESS
 - Upload file: ✅ SUCCESS
 
 **EC2 Access:**
-![Alice EC2 Read-Only](screenshots/alice-ec2-readonly.png)
+![Alice EC2 Read-Only](<img width="1919" height="790" alt="image" src="https://github.com/user-attachments/assets/79287255-16d0-4322-8e1b-456eacf568d3" />
+)
 - View instances: ✅ SUCCESS
 - Launch instance: ❌ DENIED (Expected)
 
 ### Bob's Access Tests:
 
 **S3 Access:**
-![Bob S3 Access](screenshots/bob-s3-access.png)
+![Bob S3 Access](<img width="1899" height="734" alt="image" src="https://github.com/user-attachments/assets/cd63b9d8-0241-4d60-bed0-c66da5f1ef25" />
+)
 - Create bucket: ✅ SUCCESS
 
 **EC2 Access:**
-![Bob EC2 Denied](screenshots/bob-ec2-denied.png)
+![Bob EC2 Denied](<img width="1919" height="748" alt="image" src="https://github.com/user-attachments/assets/a157025b-f1cd-495d-aac5-418fec3094c0" />
+)
 - View instances: ✅ SUCCESS
 - Launch instance: ❌ DENIED (Expected)
 
 ### Charlie's Access Tests:
 
 **Full Access:**
-![Charlie Full Access](screenshots/charlie-full-access.png)
+![Charlie Full Access](<img width="1886" height="713" alt="image" src="https://github.com/user-attachments/assets/e5bbbadb-9e6e-4496-96ad-1d644fde0f27" />
+)
 - S3 create bucket: ✅ SUCCESS
 - EC2 launch instance: ✅ SUCCESS
 
@@ -125,7 +134,8 @@
 ```
 
 ### Custom Policy Test:
-![Bob Custom Policy Test](screenshots/bob-custom-policy-test.png)
+![Bob Custom Policy Test](<img width="1901" height="751" alt="image" src="https://github.com/user-attachments/assets/23c60667-0e2d-4344-aa53-bd70d68fdf96" />).
+
 
 **Bob's Access After Custom Policy:**
 - Access dev-bucket: ✅ SUCCESS
@@ -135,7 +145,8 @@
 
 ## Exercise 6: MFA Configuration
 
-![MFA Enabled](screenshots/mfa-enabled.png)
+![MFA Enabled](<img width="1453" height="673" alt="image" src="https://github.com/user-attachments/assets/6bc0a92a-f7bd-4d1a-9997-7d09474f21d1" />
+)
 
 **MFA Details:**
 - User: [alice / admin user]
@@ -190,7 +201,7 @@ $ aws s3 ls --profile alice
 
 ### 1. Why use groups instead of attaching policies directly to users?
 
-**Your Answer:**
+**Your Answer:*It is more organized this way.*
 
 [Explain benefits: easier management, consistency, scalability, etc.]
 
@@ -198,7 +209,7 @@ $ aws s3 ls --profile alice
 
 ### 2. What are the risks of giving everyone AdministratorAccess?
 
-**Your Answer:**
+**Your Answer:*It is a huge security risk.*
 
 [Discuss: security risks, accidental changes, compliance issues, etc.]
 
@@ -206,7 +217,7 @@ $ aws s3 ls --profile alice
 
 ### 3. How would you organize IAM for 50 developers across 5 projects?
 
-**Your Answer:**
+**Your Answer:*I would assign them to different groups based on their relevant projects and give them role based access to ensure maximum efficiency*
 
 [Propose structure: project-based groups, role-based access, tagging strategy, etc.]
 
@@ -214,7 +225,7 @@ $ aws s3 ls --profile alice
 
 ### 4. What happens if you delete an IAM user? Can you recover their permissions?
 
-**Your Answer:**
+**Your Answer:*No, but you can always create a new user with the same permissions.*
 
 [Explain: user deletion is permanent, permissions can be recreated but history lost, etc.]
 
@@ -224,19 +235,19 @@ $ aws s3 ls --profile alice
 
 **What was most challenging about this lab?**
 
-[Your reflection]
+[I had connection issues.]
 
 ---
 
 **What IAM best practice will you always follow?**
 
-[Your reflection]
+[Being careful with who I assign as admin.]
 
 ---
 
 **How does IAM help implement the principle of least privilege?**
 
-[Your reflection]
+[It helps the owner give developer the needed access but nothing more than that.]
 
 ---
 
@@ -255,5 +266,5 @@ $ aws s3 ls --profile alice
 
 ---
 
-**Completed By:** [Your Name]  
-**Date:** [Date]
+**Completed By:** [Ahmet Erdogan]  
+**Date:** [03.02.2026]
